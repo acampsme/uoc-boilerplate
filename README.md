@@ -76,8 +76,8 @@ desenvolupament i compilació pròpies de UOC Boilerplate.
   700 px i 1000 px. La retícula passa d’una columna a dues, les dades de la
   pel·lícula s’adapten a l’espai i la navegació mòbil es converteix en un menú
   compacte.
-- **Direcció visual:** una paleta de paper, tinta fosca i daurat suau acompanya
-  la temàtica de la pel·lícula. El cartell és una il·lustració CSS original:
+- **Direcció visual:** una paleta de blau nit, cian elèctric i blau glaç
+  acompanya la temàtica de la pel·lícula. El cartell és una il·lustració CSS original:
   no depèn d’imatges remotes ni d’actius amb llicència desconeguda.
 - **Contingut:** la presentació explica la premissa sense espòilers, afegeix
   una fitxa i argumenta tres motius personals per veure-la. Les dades són

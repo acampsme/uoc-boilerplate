@@ -27,7 +27,7 @@ if (themeToggle && themeLabel && themeIcon) {
     themeIcon.classList.toggle("fa-moon", !isDay);
 
     if (themeColor) {
-      themeColor.content = isDay ? "#f6f1e6" : "#11110f";
+      themeColor.content = isDay ? "#f0f8ff" : "#091522";
     }
 
     if (persist) {

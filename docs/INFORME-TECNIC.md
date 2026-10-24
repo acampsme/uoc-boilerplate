@@ -84,9 +84,10 @@ comença a 160 px i es reorganitza mitjançant punts d’interrupció a 700 px i
   titulars.
 - Per sota de 220 px, es compacten la marca i els controls de la capçalera.
 
-La paleta combina fons de paper, tinta i accents daurats per evocar el to
-cinematogràfic de la recomanació. La il·lustració del cartell s’ha fet amb CSS
-i els estats del menú, els botons i els enllaços tenen estils propis.
+La paleta combina blau nit, cian elèctric i blau glaç per evocar l’atmosfera
+de ciència-ficció i donar més contrast visual a la recomanació. La il·lustració
+del cartell s’ha fet amb CSS i els estats del menú, els botons i els enllaços
+tenen estils propis.
 
 ## 6. Organització de Sass i BEM
 
