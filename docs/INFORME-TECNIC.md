@@ -65,10 +65,16 @@ El document utilitza HTML semàntic i navegació per àncores a les seccions
 principals. Els encapçalaments segueixen una jerarquia coherent i les dades de
 la fitxa es presenten amb una llista de definicions (`dl`, `dt`, `dd`).
 
-El cartell no es descarrega d’un servei extern: és una composició CSS amb
-gradients, cercles i òrbites. Això redueix peticions externes i evita dependre
-d’un recurs gràfic remot. Els enllaços de tràiler apunten a una cerca pública
-de tràilers a YouTube; no es carrega ni reprodueix automàticament vídeo.
+El cartell combina una composició CSS original —gradients, cercles i òrbites—
+amb el logotip original de *Arrival*, guardat localment a
+`src/assets/images/arrival-logo.png`. El fitxer s’ha obtingut de
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Arrival_2016_Film.png),
+que l’atribueix a Paramount Pictures i el marca com a domini públic. La pàgina
+del fitxer també n’indica la possible protecció com a marca registrada; s’hi
+afegeix un crèdit visible sota el cartell i cal respectar les restriccions de
+marca que siguin aplicables. El recurs local evita una petició d’imatge externa
+en temps d’execució. Els enllaços de tràiler apunten a una cerca pública de
+tràilers a YouTube; no es carrega ni reprodueix automàticament vídeo.
 
 ## 5. Responsive i direcció visual
 
@@ -86,8 +92,8 @@ comença a 160 px i es reorganitza mitjançant punts d’interrupció a 700 px i
 
 La paleta combina blau nit, cian elèctric i blau glaç per evocar l’atmosfera
 de ciència-ficció i donar més contrast visual a la recomanació. La il·lustració
-del cartell s’ha fet amb CSS i els estats del menú, els botons i els enllaços
-tenen estils propis.
+del cartell s’ha fet amb CSS i incorpora el logotip original de la pel·lícula;
+els estats del menú, els botons i els enllaços tenen estils propis.
 
 ## 6. Organització de Sass i BEM
 

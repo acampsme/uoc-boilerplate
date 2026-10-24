@@ -525,13 +525,11 @@ button {
 }
 
 .poster__wordmark {
-  color: #eafaff;
-  font-family: vars.$font-family-serif;
-  font-size: clamp(1.2rem, 8vw, 3.2rem);
-  letter-spacing: 0.08em;
-  line-height: 1;
+  filter: brightness(0) invert(1) drop-shadow(0 3px 12px rgb(0 0 0 / 45%));
   margin-top: auto;
-  text-shadow: 0 3px 24px rgb(0 0 0 / 45%);
+  max-width: 100%;
+  object-fit: contain;
+  width: min(100%, 18rem);
 }
 
 .poster__subtitle {
@@ -563,6 +561,23 @@ button {
 
 .hero__art-note i {
   color: vars.$color-accent;
+}
+
+.poster__credit {
+  color: vars.$color-muted-light;
+  font-size: 0.62rem;
+  margin: 0.5rem 0 0;
+  text-align: center;
+}
+
+.poster__credit a {
+  color: vars.$color-accent-light;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.poster__credit a:hover {
+  color: vars.$color-paper;
 }
 
 .hero__scroll {

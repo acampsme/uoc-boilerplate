@@ -77,8 +77,11 @@ desenvolupament i compilació pròpies de UOC Boilerplate.
   pel·lícula s’adapten a l’espai i la navegació mòbil es converteix en un menú
   compacte.
 - **Direcció visual:** una paleta de blau nit, cian elèctric i blau glaç
-  acompanya la temàtica de la pel·lícula. El cartell és una il·lustració CSS original:
-  no depèn d’imatges remotes ni d’actius amb llicència desconeguda.
+  acompanya la temàtica de la pel·lícula. El cartell combina una il·lustració
+  CSS original amb el logotip de *Arrival* de Paramount Pictures, obtingut de
+  [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Arrival_2016_Film.png),
+  on està marcat com a domini públic; el fitxer inclou també un avís de marca
+  registrada.
 - **Contingut:** la presentació explica la premissa sense espòilers, afegeix
   una fitxa i argumenta tres motius personals per veure-la. Les dades són
   informatives; la valoració no s’atribueix a una plataforma concreta.
