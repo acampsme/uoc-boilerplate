@@ -1,7 +1,6 @@
-/**
- * Import any npm dependencies in this file
- * see commented examples below
- */
-
-// @import "some-node-module";
-// @import "@some-company/some-node-module";
+@use "@fortawesome/fontawesome-free/scss/variables" with (
+  $font-path: "../../../node_modules/@fortawesome/fontawesome-free/webfonts"
+);
+@use "@fortawesome/fontawesome-free/scss/fontawesome";
+@use "@fortawesome/fontawesome-free/scss/regular";
+@use "@fortawesome/fontawesome-free/scss/solid";

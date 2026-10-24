@@ -1,67 +1,147 @@
-# UOC Boilerplate
+# Cinema de butxaca — Arrival
 
-UOC Boilerplate is a starter template for the HTML and CSS Tools courses from the [Master's Program in Multimedia Applications](https://estudis.uoc.edu/ca/masters-universitaris/aplicacions-multimedia/presentacio) and the [Master's Program in Web App and Website Development](https://estudis.uoc.edu/ca/masters-universitaris/desenvolupament-llocs-aplicacions-web/presentacio) at the [Universitat Oberta de Catalunya](https://www.uoc.edu). It aims to provide a basic, modern frontend web development starter pack based on Parcel and including a Sass compiler, an ES6 transpiler, minifiers, an image transformer, and development tools.
+Una pàgina responsive en català per recomanar *Arrival* (2016), de Denis
+Villeneuve. El projecte parteix de l’estructura del UOC Boilerplate i fa servir
+Parcel, Sass, Font Awesome i Stylelint.
 
-This is the 3.x version of UOC Boilerplate, available since the UOC 2020-2 semester.
+La [memòria tècnica](./docs/INFORME-TECNIC.md) descriu l’arquitectura, les
+decisions de desenvolupament, les interaccions i les verificacions efectuades.
 
-## Requirements
+## Requisits previs
 
-[Node.js](http://nodejs.org/) >= 18.x
+- Node.js 20.19 o superior.
+- npm (inclòs amb Node.js).
 
-## Getting started
+## Posada en marxa
 
-Clone this repository with `git clone`, or download a .zip file using the top right green button.
+Clona el repositori i instal·la les dependències:
 
-Using the Terminal, navigate to the project folder and run `npm install`.
+```sh
+git clone https://github.com/acampsme/uoc-boilerplate.git
+cd uoc-boilerplate
+npm install
+```
 
-## Features
+Inicia el servidor local de desenvolupament:
 
-- Uses [Parcel v2](https://parceljs.org) module bundler.
-- NPM scripts for fast development and production build (see Commands below).
+```sh
+npm run dev
+```
 
-### Stylesheets
+Parcel serveix la pàgina a `http://localhost:8123` i recompila els fitxers en
+desar els canvis. Per aturar-lo, prem `Ctrl+C`.
 
-- [Sass/SCSS](https://sass-lang.com) to CSS compilation (`@parcel/transformer-sass`).
-- Transpilation of modern CSS synthax to support older bvrowsers, based on `browserslist`, including vendor prefixing and synthax lowering, with [PostCSS](https://postcss.org/) (`@parcel/transformer-postcss`).
-- Minification and optimization of CSS files on production builds with [`lightningcss`](https://github.com/parcel-bundler/lightningcss) (`@parcel/optimizer-css`).
+## Validació i compilació
 
-### HTML
+Stylelint valida tots els fitxers SCSS del projecte:
 
-- Minification and optimization of CSS files on production builds [`htmlnano`](https://github.com/posthtml/htmlnano) (`@parcel/optimizer-htmlnano`).
-- [PostHTML](https://github.com/posthtml/posthtml) (`@parcel/transformer-posthtml`) features:
-  - Include partial HTML files with [`posthtml-include`](https://github.com/posthtml/posthtml-include).
+```sh
+npm run stylelint
+```
 
-### Scripts
+El mateix control s’executa amb `npm test`. Per generar els fitxers optimitzats
+per a producció a `dist/`:
 
-- Transpilation of modern JavaScript synthax to support older browsers, based on `browserslist`, with with [Babel](https://babeljs.io/) (`@parcel/transformer-babel`).
-- Minification and optimization of JS code with [SWC](https://swc.rs/) (`@parcel/optimizer-swc`).
+```sh
+npm run build
+```
 
-### Images
+El procés de desplegament ha d’utilitzar `npm run build` com a ordre de
+compilació i `dist` com a directori publicable.
 
-- Image transformation with [`sharp`](https://sharp.pixelplumbing.com/) ([`@parcel/transformer-image`](https://parceljs.org/recipes/image/)).
+## Estructura
 
-### Development
+```text
+src/
+├── index.html
+├── assets/
+│   ├── scripts/main.js
+│   └── styles/
+│       ├── _dependencies.scss
+│       ├── _functions.scss
+│       ├── _variables.scss
+│       ├── main.scss
+│       └── layouts/_home.scss
+└── views/footer.html
+```
 
-- Development server launch and live reloading on file changes.
-- Friendly error reporting.
+Es conserva el punt d’entrada HTML de Parcel, la inclusió del peu mitjançant
+PostHTML, el punt d’entrada JavaScript, l’organització d’estils i les ordres de
+desenvolupament i compilació pròpies de UOC Boilerplate.
 
-## How to use this boilerplate
+## Decisions de disseny i desenvolupament
 
-Content lives inside the `src/` folder. If you do not want to change the configuration or are unsure about what you are doing, do not edit files outside the `src/` folder.
+- **Enfocament mobile-first:** els estils base funcionen des de 160 px, amb
+  ajustos compactes per a rellotges; els canvis de disposició s’introdueixen a
+  700 px i 1000 px. La retícula passa d’una columna a dues, les dades de la
+  pel·lícula s’adapten a l’espai i la navegació mòbil es converteix en un menú
+  compacte.
+- **Direcció visual:** una paleta de paper, tinta fosca i daurat suau acompanya
+  la temàtica de la pel·lícula. El cartell és una il·lustració CSS original:
+  no depèn d’imatges remotes ni d’actius amb llicència desconeguda.
+- **Contingut:** la presentació explica la premissa sense espòilers, afegeix
+  una fitxa i argumenta tres motius personals per veure-la. Les dades són
+  informatives; la valoració no s’atribueix a una plataforma concreta.
+- **Accessibilitat:** s’utilitzen regions semàntiques, enllaç per saltar al
+  contingut, etiquetes associades, focus visible, contrast, text alternatiu
+  per a la il·lustració i avisos accessibles a les interaccions. La preferència
+  de moviment reduït desactiva les transicions.
+- **Interacció:** el menú mòbil informa l’estat amb `aria-expanded`, es tanca
+  amb Escape o en seguir un enllaç, i el control de desar actualitza
+  `aria-pressed` i anuncia el resultat. La llista és temporal i no es guarda
+  entre sessions. El botó de tema alterna entre dia i nit, actualitza la
+  paleta de tota la interfície, anuncia l’estat amb `aria-pressed` i recorda
+  l’elecció a `localStorage`.
+- **Dependència externa:** Font Awesome Free s’instal·la com a dependència npm
+  i s’importen només les icones regulars i sòlides emprades. Parcel les
+  incorpora a la compilació, sense dependre d’un CDN.
 
-Always run the following commands during the development stage and for production builds. Please note that it is expected that all projects built with this boilerplate are compiled using `npm run build` before they are published.
+## Metodologia, Sass i convencions
 
-### Commands
+S’aplica **BEM** per mantenir els noms de classe explícits i escalables en una
+interfície d’una sola pàgina: blocs com `hero`, elements com `hero__title` i
+modificadors com `button--primary`. Els estils globals es limiten al reset i
+als elements base; cada secció manté els seus estils al parcial de la pàgina.
 
-| Command         | Description                                                                                                                                                                                                                                                                                                                                                         |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `npm run dev`   | Runs a local web server for development and opens the browser to display it. Automatically compiles styles and scripts whenever a file in `src/` is changed, and live reloads the browser. This is what _must be run_ on the development stage.                                                                                                                     |
-| `npm run build` | Compiles and minifies and optimizes the files in the assets folder. The generated compiled and optimized files are located in the `dist/` folder. This is what _must be run_ before publishing the project. This is also the build command to be run by external deployment services such as Netlify. The publishable files are then located in the `dist/` folder. |
-| `npm run clean` | Deletes the current `/dist` folder and cache folders.                                                                                                                                                                                                                                                                                                               |
-| `npm run test`  | Displays a success message if everything is working as expected.                                                                                                                                                                                                                                                                                                    |
+La convenció és **SCSS idiomàtic amb la guia de Stylelint Standard SCSS**:
+indentació de dos espais (coherent amb `.editorconfig`), classes BEM en
+minúscules, components petits, propietats ordenades alfabèticament i anidació
+moderada. El disseny s’ha desenvolupat de l’estructura semàntica als estils,
+i després s’ha validat amb les ordres de Stylelint i Parcel.
 
-## Need help? / Want to help out?
+Les característiques Sass s’utilitzen conjuntament:
 
-Feel free to create a [new issue](https://github.com/uoc-advanced-html-css/uoc-boilerplate/issues/new/) or drop me a line at jorditarrida@uoc.edu.
+- `_variables.scss` defineix paleta, tipografia, amplada i punts d’interrupció.
+- `_functions.scss` crea `rem()`, que converteix mides en píxels a rem.
+- `_dependencies.scss` integra els parcials SCSS de Font Awesome.
+- `layouts/_home.scss` agrupa els estils de la pàgina, amb nesting per
+  modificadors BEM i estats d’interacció.
+- `main.scss` importa els parcials amb `@use`, el sistema de mòduls de Sass,
+  i conserva el paper de punt únic d’entrada dels estils.
 
-Are you using this Boilerplate for your projects or for educational purposes? I would love to hear about it!
+## Configuració de Stylelint
+
+La configuració de `.stylelintrc.json` estén `stylelint-config-standard-scss`,
+que aporta les normes estàndard de CSS i SCSS. Les personalitzacions són:
+
+- `stylelint-order`: exigeix ordre alfabètic de propietats per facilitar la
+  lectura i reduir diferències als canvis.
+- `selector-class-pattern`: valida blocs, elements i modificadors BEM.
+- `max-nesting-depth: 2`: limita l’anidació i evita selectors massa específics.
+- `selector-max-id: 0`: evita IDs als selectors d’estil.
+- `color-hex-length: short`: manté els colors hexadecimals concisos quan és
+  possible.
+
+Executa `npm run stylelint` després de modificar Sass; ha d’acabar sense errors.
+La tasca `npm test` reprodueix la mateixa validació.
+
+## Publicació a GitHub i Netlify
+
+Per actualitzar el repositori amb els canvis:
+
+```sh
+git status
+git add README.md docs/INFORME-TECNIC.md package.json package-lock.json .stylelintrc.json src/
+git commit -m "Responsive Arrival"
+git push origin master
+```

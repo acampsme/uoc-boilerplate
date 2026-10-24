@@ -1,34 +1,329 @@
 <!doctype html>
-
-<html>
+<html lang="ca">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Una recomanació de cinema per mirar el primer contacte amb uns altres ulls. Descobreix Arrival, de Denis Villeneuve."
+    />
+    <meta name="theme-color" content="#11110f" />
+    <link rel="stylesheet" href="./assets/styles/main.scss" />
     <!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
+    <title>Arrival — Una pel·lícula per sentir el temps</title>
   </head>
   <body>
-    <div class="uoc-container">
-      <picture>
-        <source
-          srcset="./assets/images/logo.png?as=webp&width=350"
-          type="image/webp"
-        />
-        <img
-          src="./assets/images/logo.png?width=350"
-          alt="Universitat Oberta de Catalunya"
-          class="uoc-logo"
-        />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-    </div>
+    <a class="skip-link" href="#contingut">Ves al contingut</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="#" aria-label="Cinema de butxaca, inici">
+          <span class="brand__mark" aria-hidden="true">
+            <i class="fa-solid fa-film"></i>
+          </span>
+          <span class="brand__name">cinema<span>de butxaca</span></span>
+        </a>
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Canvia al mode de dia"
+          aria-pressed="false"
+          data-theme-toggle
+        >
+          <i
+            class="fa-solid fa-moon theme-toggle__icon"
+            aria-hidden="true"
+            data-theme-icon
+          ></i>
+          <span class="theme-toggle__label" data-theme-label>Nit</span>
+        </button>
+        <button
+          class="site-header__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="navegacio-principal"
+          aria-label="Obre el menú"
+        >
+          <span class="site-header__toggle-line"></span>
+          <span class="site-header__toggle-line"></span>
+        </button>
+        <nav
+          class="site-header__nav"
+          id="navegacio-principal"
+          aria-label="Navegació principal"
+        >
+          <a class="site-header__link" href="#historia">La història</a>
+          <a class="site-header__link" href="#fitxa">Fitxa</a>
+          <a class="site-header__link" href="#recomanacio">Per què veure-la</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contingut">
+      <section class="hero" aria-labelledby="titol-principal">
+        <div class="hero__glow" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <div class="hero__copy">
+            <p class="eyebrow">
+              <span class="eyebrow__line"></span>
+              Una recomanació per perdre’s una estona
+            </p>
+            <h1 class="hero__title" id="titol-principal">
+              I si el futur
+              <em>ja hagués passat?</em>
+            </h1>
+            <p class="hero__description">
+              Una llengua que no s’escolta: es contempla. <em>Arrival</em> és
+              ciència-ficció íntima sobre el llenguatge, el dol i la manera com
+              estimem allò que encara no ha arribat.
+            </p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#historia">
+                Descobreix la pel·lícula
+                <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+              </a>
+              <a
+                class="button button--quiet"
+                href="https://www.youtube.com/results?search_query=Arrival+2016+trailer+official"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+                Mira el tràiler
+              </a>
+            </div>
+            <p class="hero__credit">
+              <span class="hero__credit-dot" aria-hidden="true"></span>
+              La tria d’aquesta setmana <span>·</span> 8 min de lectura
+            </p>
+          </div>
+
+          <div class="hero__art" role="img" aria-label="Il·lustració abstracta d'un cercle de llum entre la boira">
+            <div class="poster">
+              <span class="poster__top">Una pel·lícula de Denis Villeneuve</span>
+              <span class="poster__planet" aria-hidden="true"></span>
+              <span class="poster__orbit poster__orbit--one" aria-hidden="true"></span>
+              <span class="poster__orbit poster__orbit--two" aria-hidden="true"></span>
+              <span class="poster__wordmark">ARRIVAL</span>
+              <span class="poster__subtitle">La seva llengua serà la nostra arma.</span>
+              <span class="poster__year">2016&nbsp; · &nbsp;130 min</span>
+            </div>
+            <span class="hero__art-note">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              Una història que es queda
+            </span>
+          </div>
+        </div>
+        <a class="hero__scroll" href="#historia" aria-label="Desplaça't a la història">
+          <span></span>
+        </a>
+      </section>
+
+      <section class="film-strip" aria-label="Dades destacades">
+        <div class="film-strip__inner">
+          <p class="film-strip__item">
+            <span class="film-strip__label">Gènere</span>
+            <span class="film-strip__value">Ciència-ficció · Drama</span>
+          </p>
+          <p class="film-strip__item">
+            <span class="film-strip__label">Direcció</span>
+            <span class="film-strip__value">Denis Villeneuve</span>
+          </p>
+          <p class="film-strip__item">
+            <span class="film-strip__label">Protagonista</span>
+            <span class="film-strip__value">Amy Adams</span>
+          </p>
+          <p class="film-strip__item">
+            <span class="film-strip__label">Puntuació</span>
+            <span class="film-strip__value film-strip__value--rating">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              7,9 <span>/ 10</span>
+            </span>
+          </p>
+        </div>
+      </section>
+
+      <section class="story section" id="historia" aria-labelledby="titol-historia">
+        <div class="section__inner story__inner">
+          <div class="section__intro">
+            <p class="eyebrow eyebrow--dark">
+              <span class="eyebrow__line"></span>
+              La història, sense espòilers
+            </p>
+            <h2 class="section__title" id="titol-historia">
+              Una pregunta que canvia
+              <em>totes les respostes.</em>
+            </h2>
+          </div>
+          <div class="story__body">
+            <p class="story__lead">
+              Un dia, dotze naus extraterrestres apareixen en diferents punts de
+              la Terra. Ningú no sap per què han vingut ni què volen.
+            </p>
+            <p class="story__text">
+              L’exèrcit demana ajuda a Louise Banks, una lingüista que haurà de
+              trobar la manera de comunicar-s’hi. Cada paraula que desxifra
+              acosta la humanitat a una resposta —i a una forma completament
+              nova d’entendre el temps.
+            </p>
+            <div class="story__quote">
+              <span class="story__quote-mark" aria-hidden="true">“</span>
+              <blockquote>
+                Si poguessis veure tota la teva vida, la canviaries?
+              </blockquote>
+              <span class="story__quote-credit">La pregunta que ho travessa tot</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="details section" id="fitxa" aria-labelledby="titol-fitxa">
+        <div class="section__inner details__inner">
+          <div class="details__heading">
+            <div>
+              <p class="eyebrow">
+                <span class="eyebrow__line"></span>
+                Apunta-la per després
+              </p>
+              <h2 class="section__title section__title--light" id="titol-fitxa">
+                La fitxa <em>de la pel·lícula.</em>
+              </h2>
+            </div>
+            <button
+              class="save-button"
+              type="button"
+              aria-pressed="false"
+              data-save-button
+            >
+              <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+              <span data-save-label>Afegeix a la llista</span>
+            </button>
+          </div>
+          <p class="details__status" aria-live="polite" data-save-status></p>
+          <dl class="film-facts">
+            <div class="film-facts__item">
+              <dt>Any</dt>
+              <dd>2016</dd>
+            </div>
+            <div class="film-facts__item">
+              <dt>Durada</dt>
+              <dd>2 h 10 min</dd>
+            </div>
+            <div class="film-facts__item">
+              <dt>País</dt>
+              <dd>Estats Units</dd>
+            </div>
+            <div class="film-facts__item">
+              <dt>Gènere</dt>
+              <dd>Ciència-ficció, drama</dd>
+            </div>
+            <div class="film-facts__item">
+              <dt>Direcció</dt>
+              <dd>Denis Villeneuve</dd>
+            </div>
+            <div class="film-facts__item">
+              <dt>Repartiment</dt>
+              <dd>Amy Adams, Jeremy Renner, Forest Whitaker</dd>
+            </div>
+            <div class="film-facts__item">
+              <dt>Guió</dt>
+              <dd>Eric Heisserer, a partir d’un relat de Ted Chiang</dd>
+            </div>
+            <div class="film-facts__item">
+              <dt>Per a qui?</dt>
+              <dd>Per a qui gaudeix de la ciència-ficció amb ànima</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section
+        class="reasons section"
+        id="recomanacio"
+        aria-labelledby="titol-recomanacio"
+      >
+        <div class="section__inner">
+          <div class="reasons__heading">
+            <div>
+              <p class="eyebrow eyebrow--dark">
+                <span class="eyebrow__line"></span>
+                Tres motius per donar-li una oportunitat
+              </p>
+              <h2 class="section__title" id="titol-recomanacio">
+                No és només una història
+                <em>d’extraterrestres.</em>
+              </h2>
+            </div>
+            <p class="reasons__aside">
+              De vegades, una pel·lícula de ciència-ficció parla més de nosaltres
+              que del que hi ha a l’espai.
+            </p>
+          </div>
+          <div class="reason-list">
+            <article class="reason-card">
+              <span class="reason-card__number">01</span>
+              <div>
+                <h3>Una idea que et segueix</h3>
+                <p>
+                  Agafa un concepte fascinant i el converteix en una pregunta
+                  molt humana. En surts amb ganes de parlar-ne.
+                </p>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </article>
+            <article class="reason-card">
+              <span class="reason-card__number">02</span>
+              <div>
+                <h3>Imatges que parlen soles</h3>
+                <p>
+                  La boira, el silenci i una nau impossible creen una atmosfera
+                  que es gaudeix millor amb la pantalla gran.
+                </p>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </article>
+            <article class="reason-card">
+              <span class="reason-card__number">03</span>
+              <div>
+                <h3>Una interpretació delicada</h3>
+                <p>
+                  Amy Adams troba emoció i matisos dins d’un relat que podria
+                  haver estat fred. Aquí, cada pausa importa.
+                </p>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </article>
+          </div>
+          <p class="reasons__note">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            Una recomanació personal. La valoració pot variar segons la
+            plataforma.
+          </p>
+        </div>
+      </section>
+
+      <section class="closing" aria-labelledby="titol-final">
+        <div class="closing__inner">
+          <span class="closing__ornament" aria-hidden="true">∞</span>
+          <p class="eyebrow">
+            <span class="eyebrow__line"></span>
+            La pregunta és teva
+          </p>
+          <h2 class="closing__title" id="titol-final">
+            I tu, <em>la veuries?</em>
+          </h2>
+          <a
+            class="button button--primary"
+            href="https://www.youtube.com/results?search_query=Arrival+2016+trailer+official"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Fes una ullada al tràiler
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
     <!-- do not remove this line! -->
