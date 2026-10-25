@@ -14,6 +14,11 @@ decisions de desenvolupament, les interaccions i les verificacions efectuades.
 
 ## Posada en marxa
 
+Cal comentar que previament he fet un fork de:
+https://github.com/uoc-advanced-html-css/uoc-boilerplate.git
+a https://github.com/acampsme/uoc-boilerplate.git
+
+
 Clona el repositori i instal·la les dependències:
 
 ```sh
