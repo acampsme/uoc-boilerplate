@@ -1,4 +1,5 @@
 # Cinema de butxaca — Arrival
+https://cinemadebutxaca.netlify.app/
 
 Una pàgina responsive en català per recomanar *Arrival* (2016), de Denis
 Villeneuve. El projecte parteix de l’estructura del UOC Boilerplate i fa servir
