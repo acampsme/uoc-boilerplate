@@ -125,9 +125,20 @@ Les característiques Sass s’integren en l’arquitectura:
 
 S’ha afegit **Font Awesome Free** com a dependència npm perquè les icones de
 pel·lícula, lluna, sol, estrella, fletxes i marcador siguin consistents amb la
-resta de la interfície. S’importen les variants regular i sòlida necessàries,
-i Parcel empaqueta les tipografies amb la resta dels recursos. No s’utilitza un
-CDN.
+resta de la interfície. La instal·lació s’ha fet amb:
+
+```sh
+npm install @fortawesome/fontawesome-free
+```
+
+El paquet es desa com a dependència d’execució a `package.json`, i
+`package-lock.json` fixa la resolució de la instal·lació. El parcial
+`src/assets/styles/_dependencies.scss` importa els estils base de Font Awesome
+i les variants regular i sòlida necessàries; també configura `$font-path` per
+trobar les tipografies a `node_modules`. `src/assets/styles/main.scss` carrega
+el parcial amb `@use`, i Parcel empaqueta els estils i les tipografies en
+compilar. Les icones s’utilitzen amb classes com `fa-solid` i `fa-regular` als
+fitxers HTML. No s’utilitza un CDN.
 
 El flux de treball és el del boilerplate:
 

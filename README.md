@@ -28,6 +28,19 @@ cd uoc-boilerplate
 npm install
 ```
 
+Font Awesome Free s’ha afegit al projecte amb npm:
+
+```sh
+npm install @fortawesome/fontawesome-free
+```
+
+Aquest paquet és una dependència de l’aplicació i queda registrat a
+`package.json` i `package-lock.json`. Els imports SCSS de
+`src/assets/styles/_dependencies.scss` seleccionen les icones regulars i
+sòlides; `src/assets/styles/main.scss` incorpora aquest parcial i Parcel
+empaqueta els estils i les tipografies amb la compilació. No es carrega des
+d’un CDN.
+
 Inicia el servidor local de desenvolupament:
 
 ```sh
